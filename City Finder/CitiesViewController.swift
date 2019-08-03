@@ -35,10 +35,12 @@ class CitiesViewController: UITableViewController {
 
   override func viewWillAppear(_ animated: Bool) {
     clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
+    navigationItem.hidesSearchBarWhenScrolling = false
     super.viewWillAppear(animated)
   }
 
   func setupView() {
+    self.title = "Cities"
     tableView.register(CityCellView.self, forCellReuseIdentifier: "cityCell")
     //searchController.searchBar.delegate = self
     searchController.dimsBackgroundDuringPresentation = false
@@ -51,6 +53,10 @@ class CitiesViewController: UITableViewController {
 
   func isFiltering() {
     viewModel.isSearching = searchController.isActive && !searchBarIsEmpty
+  }
+
+  func updateView() {
+    self.tableView.reloadData()
   }
 
 }

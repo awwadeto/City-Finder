@@ -31,4 +31,18 @@ class CitiesViewModel {
     return isSearching ? filteredCities[row] : cities[row]
   }
 
+  func filterContentForSearchText(_ searchText: String, completion: @escaping () -> Void) {
+    let concurrentQueue = DispatchQueue(label: "searchQueue", attributes: .concurrent)
+    concurrentQueue.async {
+      self.filteredCities = self.cities.filter({ (city: City) -> Bool in
+        return city.name.lowercased().contains(searchText.lowercased())
+      })
+      completion()
+
+      DispatchQueue.main.async {
+        self.viewController?.updateView()
+      }
+    }
+  }
+
 }

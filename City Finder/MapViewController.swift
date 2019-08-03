@@ -54,6 +54,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
   func focusMap() {
     if let city = city {
+      self.title = city.name
       let center = CLLocationCoordinate2D(latitude: city.location.latitude, longitude: city.location.longitude)
       let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
       self.mapView.setRegion(region, animated: true)

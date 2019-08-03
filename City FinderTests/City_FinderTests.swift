@@ -11,24 +11,41 @@ import XCTest
 
 class City_FinderTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+  var sut: CitiesViewModel!
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+  override func setUp() {
+      // Put setup code here. This method is called before the invocation of each test method in the class.
+    super.setUp()
+    sut = CitiesViewModel(viewController: nil)
+  }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+  override func tearDown() {
+      // Put teardown code here. This method is called after the invocation of each test method in the class.
+    sut = nil
+    super.tearDown()
+  }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+  func testNumberOfCells() {
+    XCTAssertEqual(209557, sut.numberOfCells)
+    sut.isSearching = true
+    XCTAssertEqual(0, sut.numberOfCells)
+  }
+
+  func testFilterContent() {
+    let expectation = self.expectation(description: "Searching")
+    self.sut.isSearching = true
+    sut.filterContentForSearchText("beirut") {
+      expectation.fulfill()
     }
+    waitForExpectations(timeout: 5, handler: nil)
+    XCTAssertEqual(1, self.sut.filteredCities.count)
+    XCTAssertEqual("Beirut", self.sut.selectCell(row: 0).name)
+  }
+
+  func testSelectCell() {
+    let city = sut.selectCell(row: 0)
+    XCTAssertEqual("'t Hoeksken", city.name)
+    XCTAssertNotEqual("Beirut", city.name)
+  }
 
 }
