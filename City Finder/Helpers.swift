@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+/**
+ Get array of cities from JSON file.
+
+ - Returns: An array of cities
+
+ */
 func getCities() -> [City] {
   var arrayOfCities: [City] = []
   do {
@@ -35,6 +41,12 @@ func getCities() -> [City] {
   return arrayOfCities
 }
 
+/**
+ Get about info from JSON file.
+
+ - Returns: An aboutInfo Object with all related info
+
+ */
 func getAboutInfo() -> AboutInfo? {
   do {
     guard let path = Bundle.main.url(forResource: "aboutInfo", withExtension: "json") else {

@@ -10,6 +10,8 @@ import UIKit
 
 class CitiesViewController: UITableViewController {
 
+  // MARK: - Properties
+
   var viewModel: CitiesViewModel!
   var searchController = UISearchController(searchResultsController: nil)
   var mapViewController: MapViewController? = nil
@@ -17,6 +19,8 @@ class CitiesViewController: UITableViewController {
   var searchBarIsEmpty: Bool {
     return searchController.searchBar.text?.isEmpty ?? true
   }
+
+  // MARK: - Initialization
 
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -39,6 +43,7 @@ class CitiesViewController: UITableViewController {
     super.viewWillAppear(animated)
   }
 
+  // MARK: set up the searchController's appearance
   func setupView() {
     self.title = "Cities"
     tableView.register(CityCellView.self, forCellReuseIdentifier: "cityCell")
@@ -51,10 +56,12 @@ class CitiesViewController: UITableViewController {
     definesPresentationContext = true
   }
 
+  // MARK: updating data source
   func isFiltering() {
     viewModel.isSearching = searchController.isActive && !searchBarIsEmpty
   }
 
+  // MARK: updating view after search
   func updateView() {
     self.tableView.reloadData()
   }

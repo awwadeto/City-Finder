@@ -29,6 +29,7 @@ extension CitiesViewController {
     return cell
   }
 
+  // MARK: passing selected city to MapView
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let city = viewModel.selectCell(row: indexPath.row)
     let location = MKPointAnnotation()

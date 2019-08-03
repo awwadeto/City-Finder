@@ -11,13 +11,18 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
 
+  // MARK: - Properties
+
+  var button: UIButton! // Detail button for pin about info
   var mapView: MKMapView!
+
   var city: City? {
     didSet {
       configureView()
       focusMap()
     }
   }
+
   var annotation: MKAnnotation! {
     didSet {
       self.mapView.removeAnnotation(annotation)
@@ -25,11 +30,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
   }
 
-  var button: UIButton!
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view.
+    configureView()
+  }
 
+  // MARK: set up the views' appearance
   func configureView() {
-    // Update the user interface for the detail item.
-
     mapView = MKMapView()
     mapView.translatesAutoresizingMaskIntoConstraints = false
     mapView.delegate = self
@@ -46,12 +54,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
       ])
   }
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view.
-    configureView()
-  }
-
+  /// Centers the map view on the city's location with a span of 0.01
   func focusMap() {
     if let city = city {
       self.title = city.name

@@ -31,6 +31,12 @@ class CitiesViewModel {
     return isSearching ? filteredCities[row] : cities[row]
   }
 
+  /**
+   Filters cities by name.
+
+   - Parameter searchText: City name entered by user
+
+   */
   func filterContentForSearchText(_ searchText: String, completion: @escaping () -> Void) {
     let concurrentQueue = DispatchQueue(label: "searchQueue", attributes: .concurrent)
     concurrentQueue.async {

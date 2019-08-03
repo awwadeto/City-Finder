@@ -14,6 +14,7 @@ class AboutViewController: UITableViewController {
   var viewModel: AboutViewModel!
   let activityIndicatorView = UIActivityIndicatorView(style: .gray)
 
+  // MARK: set up the views' appearance
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel = AboutViewModel(viewController: self)

@@ -11,13 +11,18 @@ import UIKit
 
 class CityCellView: UITableViewCell {
 
+  // MARK: - Properties
+
   var titleLabel: UILabel!
   var detailLabel: UILabel!
 
+  // MARK: - Initialization
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
 
+  // MARK: set up the cell's appearance
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     self.backgroundColor = .white
@@ -53,6 +58,12 @@ class CityCellView: UITableViewCell {
       ])
   }
 
+  /**
+   Populates the cell with the city details.
+
+   - Parameter city: City object to show
+
+   */
   func populateCell(city: City) {
     titleLabel.text = "\(city.name), \(city.country)"
     detailLabel.text = "Latitude: \(city.location.latitude), Longitude: \(city.location.longitude)"
