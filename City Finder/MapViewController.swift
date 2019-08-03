@@ -25,6 +25,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
   }
 
+  var button: UIButton!
+
   func configureView() {
     // Update the user interface for the detail item.
 
@@ -32,6 +34,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     mapView.translatesAutoresizingMaskIntoConstraints = false
     mapView.delegate = self
     self.view.addSubview(mapView)
+
+    button = UIButton(type: .detailDisclosure)
+    button.addTarget(self, action: #selector(openInfo), for: .touchUpInside)
 
     NSLayoutConstraint.activate([
       mapView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
@@ -66,12 +71,20 @@ class MapViewController: UIViewController, MKMapViewDelegate {
       } else {
         pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
         pinView!.pinTintColor = .red
+        pinView!.canShowCallout = true
         pinView!.isEnabled = true
+        pinView!.animatesDrop = true
+        pinView!.rightCalloutAccessoryView = button
       }
       return pinView
     }
   }
 
+  @objc func openInfo() {
+    let controller = AboutViewController()
+    let navController = UINavigationController(rootViewController: controller)
+    self.present(navController, animated: true, completion: nil)
+  }
 
 }
 

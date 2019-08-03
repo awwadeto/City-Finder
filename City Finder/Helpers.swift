@@ -34,3 +34,22 @@ func getCities() -> [City] {
   }
   return arrayOfCities
 }
+
+func getAboutInfo() -> AboutInfo? {
+  do {
+    guard let path = Bundle.main.url(forResource: "aboutInfo", withExtension: "json") else {
+      debugPrint("not found")
+      return nil
+    }
+    let data = try Data(contentsOf: path)
+    let aboutInfo = try JSONSerialization.jsonObject(with: data, options: [])
+    if let aboutInfo = aboutInfo as? NSDictionary {
+      if let info = AboutInfo(json: aboutInfo) {
+        return info
+      }
+    }
+  } catch {
+    print("error: \(error.localizedDescription)")
+  }
+  return nil
+}
