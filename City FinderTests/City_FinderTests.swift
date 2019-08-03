@@ -40,6 +40,20 @@ class City_FinderTests: XCTestCase {
     waitForExpectations(timeout: 5, handler: nil)
     XCTAssertEqual(1, self.sut.filteredCities.count)
     XCTAssertEqual("Beirut", self.sut.selectCell(row: 0).name)
+
+    let wrongExpectation = self.expectation(description: "wrongSearching")
+    sut.filterContentForSearchText("amsterdams") {
+      wrongExpectation.fulfill()
+    }
+    waitForExpectations(timeout: 5, handler: nil)
+    XCTAssertEqual(0, self.sut.filteredCities.count)
+
+    let multipleExpectation = self.expectation(description: "multipleSearching")
+    sut.filterContentForSearchText("amster") {
+      multipleExpectation.fulfill()
+    }
+    waitForExpectations(timeout: 5, handler: nil)
+    XCTAssertEqual(8, self.sut.filteredCities.count)
   }
 
   func testSelectCell() {
