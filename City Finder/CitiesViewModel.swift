@@ -10,5 +10,26 @@ import Foundation
 import UIKit
 
 class CitiesViewModel {
-  
+
+  var viewController: CitiesViewController?
+  var cities = getCities()
+  var filteredCities = [City]()
+  var isSearching = false
+
+  var numberOfCells: Int {
+    if isSearching {
+      return filteredCities.count
+    }
+    return cities.count
+  }
+
+  // MARK: Initialisation
+  init(viewController: CitiesViewController?) {
+    self.viewController = viewController
+  }
+
+  func selectCell(row: Int) -> City {
+    return isSearching ? filteredCities[row] : cities[row]
+  }
+
 }

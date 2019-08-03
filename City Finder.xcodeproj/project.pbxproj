@@ -20,6 +20,8 @@
 		46375B0222F568F800508191 /* CityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46375B0122F568F800508191 /* CityCellView.swift */; };
 		46375B0522F5693700508191 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46375B0422F5693700508191 /* City.swift */; };
 		46375B0822F5695500508191 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46375B0722F5695500508191 /* Helpers.swift */; };
+		46375B0A22F5709100508191 /* CitiesView+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46375B0922F5709100508191 /* CitiesView+TableView.swift */; };
+		46375B0C22F570C900508191 /* CitiesView+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46375B0B22F570C900508191 /* CitiesView+Search.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		46375B0122F568F800508191 /* CityCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellView.swift; sourceTree = "<group>"; };
 		46375B0422F5693700508191 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		46375B0722F5695500508191 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		46375B0922F5709100508191 /* CitiesView+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CitiesView+TableView.swift"; sourceTree = "<group>"; };
+		46375B0B22F570C900508191 /* CitiesView+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CitiesView+Search.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				46375ACC22F5670D00508191 /* CitiesViewController.swift */,
+				46375B0922F5709100508191 /* CitiesView+TableView.swift */,
+				46375B0B22F570C900508191 /* CitiesView+Search.swift */,
 				46375AFF22F5689400508191 /* CitiesViewModel.swift */,
 				46375B0122F568F800508191 /* CityCellView.swift */,
 			);
@@ -316,12 +322,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				46375ACF22F5670D00508191 /* MapViewController.swift in Sources */,
+				46375B0C22F570C900508191 /* CitiesView+Search.swift in Sources */,
 				46375B0822F5695500508191 /* Helpers.swift in Sources */,
 				46375B0022F5689400508191 /* CitiesViewModel.swift in Sources */,
 				46375B0522F5693700508191 /* City.swift in Sources */,
 				46375B0222F568F800508191 /* CityCellView.swift in Sources */,
 				46375ACD22F5670D00508191 /* CitiesViewController.swift in Sources */,
 				46375ACB22F5670D00508191 /* AppDelegate.swift in Sources */,
+				46375B0A22F5709100508191 /* CitiesView+TableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

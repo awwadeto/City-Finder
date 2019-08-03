@@ -51,6 +51,11 @@ class CityCellView: UITableViewCell {
       detailLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
       detailLabel.heightAnchor.constraint(equalTo: titleLabel.heightAnchor)
       ])
-
   }
+
+  func populateCell(city: City) {
+    titleLabel.text = "\(city.name), \(city.country)"
+    detailLabel.text = "Latitude: \(city.location.latitude), Longitude: \(city.location.longitude)"
+  }
+  
 }
