@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController {
 
   // MARK: - Properties
 
@@ -32,7 +32,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
     configureView()
   }
 
@@ -61,26 +60,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
       let center = CLLocationCoordinate2D(latitude: city.location.latitude, longitude: city.location.longitude)
       let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
       self.mapView.setRegion(region, animated: true)
-    }
-  }
-
-  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-    if annotation is MKUserLocation {
-      return nil
-    } else {
-      let reuseId = "pin"
-      var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
-      if let pinView = pinView {
-        pinView.annotation = annotation
-      } else {
-        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-        pinView!.pinTintColor = .red
-        pinView!.canShowCallout = true
-        pinView!.isEnabled = true
-        pinView!.animatesDrop = true
-        pinView!.rightCalloutAccessoryView = button
-      }
-      return pinView
     }
   }
 

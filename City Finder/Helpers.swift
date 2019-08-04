@@ -16,9 +16,16 @@ import UIKit
 
  */
 func getCities() -> [City] {
+  var fileName = "cities"
+  #if DEBUG
+  if CommandLine.arguments.contains("enable-testing") {
+    fileName = "citiesUITest"
+  }
+  #endif
+
   var arrayOfCities: [City] = []
   do {
-    guard let path = Bundle.main.url(forResource: "cities", withExtension: "json") else {
+    guard let path = Bundle.main.url(forResource: fileName, withExtension: "json") else {
       debugPrint("not found")
       return []
     }

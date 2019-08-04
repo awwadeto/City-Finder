@@ -26,6 +26,7 @@ extension CitiesViewController {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell", for: indexPath) as! CityCellView
     let city = viewModel.selectCell(row: indexPath.row)
     cell.populateCell(city: city)
+    cell.accessibilityIdentifier = "cityCell_\(indexPath.row)"
     return cell
   }
 

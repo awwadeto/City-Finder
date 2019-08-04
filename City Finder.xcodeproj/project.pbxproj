@@ -28,6 +28,8 @@
 		46375B1522F583A600508191 /* aboutInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 46375B1422F583A600508191 /* aboutInfo.json */; };
 		46375B1722F583CA00508191 /* AboutInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46375B1622F583CA00508191 /* AboutInfo.swift */; };
 		46375B1922F5A03200508191 /* AboutViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46375B1822F5A03200508191 /* AboutViewModelTests.swift */; };
+		46375B1B22F6B1DA00508191 /* citiesUITest.json in Resources */ = {isa = PBXBuildFile; fileRef = 46375B1A22F6B1DA00508191 /* citiesUITest.json */; };
+		46375B1D22F6C4F700508191 /* MapView+MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46375B1C22F6C4F700508191 /* MapView+MapDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		46375B1422F583A600508191 /* aboutInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = aboutInfo.json; sourceTree = "<group>"; };
 		46375B1622F583CA00508191 /* AboutInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInfo.swift; sourceTree = "<group>"; };
 		46375B1822F5A03200508191 /* AboutViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewModelTests.swift; sourceTree = "<group>"; };
+		46375B1A22F6B1DA00508191 /* citiesUITest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citiesUITest.json; sourceTree = "<group>"; };
+		46375B1C22F6C4F700508191 /* MapView+MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView+MapDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				46375ACE22F5670D00508191 /* MapViewController.swift */,
+				46375B1C22F6C4F700508191 /* MapView+MapDelegate.swift */,
 			);
 			name = "Map View";
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			children = (
 				46375AD322F5670D00508191 /* Assets.xcassets */,
 				46375AFD22F5681B00508191 /* cities.json */,
+				46375B1A22F6B1DA00508191 /* citiesUITest.json */,
 				46375B1422F583A600508191 /* aboutInfo.json */,
 			);
 			name = Assets;
@@ -324,6 +330,7 @@
 				46375AD422F5670D00508191 /* Assets.xcassets in Resources */,
 				46375B1522F583A600508191 /* aboutInfo.json in Resources */,
 				46375AD222F5670D00508191 /* Main.storyboard in Resources */,
+				46375B1B22F6B1DA00508191 /* citiesUITest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +360,7 @@
 				46375B1322F5824200508191 /* AboutViewModel.swift in Sources */,
 				46375B1122F5815F00508191 /* AboutView+TableView.swift in Sources */,
 				46375B0822F5695500508191 /* Helpers.swift in Sources */,
+				46375B1D22F6C4F700508191 /* MapView+MapDelegate.swift in Sources */,
 				46375B0022F5689400508191 /* CitiesViewModel.swift in Sources */,
 				46375B0522F5693700508191 /* City.swift in Sources */,
 				46375B1722F583CA00508191 /* AboutInfo.swift in Sources */,

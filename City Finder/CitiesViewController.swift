@@ -46,6 +46,7 @@ class CitiesViewController: UITableViewController {
   // MARK: set up the searchController's appearance
   func setupView() {
     self.title = "Cities"
+    tableView.accessibilityIdentifier = "cityTableView"
     tableView.register(CityCellView.self, forCellReuseIdentifier: "cityCell")
     //searchController.searchBar.delegate = self
     searchController.dimsBackgroundDuringPresentation = false
