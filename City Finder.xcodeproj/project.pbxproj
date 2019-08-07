@@ -187,8 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				46375AD322F5670D00508191 /* Assets.xcassets */,
-				46375AFD22F5681B00508191 /* cities.json */,
 				46375B1A22F6B1DA00508191 /* citiesUITest.json */,
+				46375AFD22F5681B00508191 /* cities.json */,
 				46375B1422F583A600508191 /* aboutInfo.json */,
 			);
 			name = Assets;
